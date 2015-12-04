@@ -1,0 +1,330 @@
+@font-face {
+    font-family: "Sophia Pro Regular";
+    src: url(fonts/Mostardesign%20-%20Sofia%20Pro%20Regular_0.otf);
+}
+
+@font-face {
+    font-family: "Sophia Pro Bold";
+    src: url(fonts/Mostardesign%20-%20Sofia%20Pro%20Bold_0.otf);
+}
+
+body {
+    width: 320px;
+    height: 480px;
+    margin: 0;
+    padding: 0;
+    font-family: "Sophia Pro Regular";
+    overflow: hidden;
+}
+
+#rma-widget {
+    width: 320px;
+    height: 480px;
+    background: url("../img/bg.png") no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+
+#wrapper {
+    width: 320px;
+    height: 480px;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+#rexona-logo {
+    z-index: 3;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 66px;
+    height: 59px;
+    background: url("../img/rexona-logo.png") no-repeat;
+}
+#first-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url("../img/first-screen-bg.png") no-repeat;
+}
+#first-screen #header-banner {
+    position: absolute;
+    top: 13px;
+    right: 20px;
+    width: 215px;
+    height: 77px;
+    background: url("../img/pink-header-banner.png") no-repeat;
+}
+#first-screen #text-below-banner {
+    width: 200px;
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    font-size: 13px;
+}
+#first-screen .girl {
+    position: absolute;
+}
+#first-screen #girl-1.girl {
+    width: 155px;
+    height: 278px;
+    left: -10px;
+    bottom: -138px;
+    background: url("../img/girl-1.png") no-repeat;
+}
+#first-screen #girl-2.girl {
+    width: 166px;
+    height: 301px;
+    left: 90px;
+    bottom: -138px;
+    z-index: 1;
+    background: url("../img/girl-2.png") no-repeat;
+}
+#first-screen #girl-3.girl {
+    width: 184px;
+    height: 270px;
+    right: -40px;
+    bottom: -130px;
+    background: url("../img/girl-3.png") no-repeat;
+}
+#first-screen #buttons {
+    position: absolute;
+    left: 16px;
+    top: 136px;
+}
+#first-screen #buttons .btn {
+    display: block;
+    text-decoration: none;
+    width: 187px;
+    height: 30px;
+    padding: 13px 50px;
+    margin-bottom: 5px;
+    background: url("../img/blue-btn-bg-rounded.png") no-repeat;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+#pink-figure {
+    position: absolute;
+    left: -196px;
+    top: 175px;
+    width: 196px;
+    height: 65px;
+    background: url("../img/pink-figure.png") no-repeat;
+    padding: 25px 0 0 35px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 11px;
+    line-height: 16px;
+    font-family: "Sophia Pro Bold";
+}
+#blue-figure {
+    position: absolute;
+    left: -168px;
+    top: 120px;
+    width: 168px;
+    height: 69px;
+    background: url("../img/blue-figure.png") no-repeat;
+}
+#blue-figure p {
+    padding-left: 35px;
+    text-transform: uppercase;
+    font-family: "Sophia Pro Bold";
+    color: #ffffff;
+}
+#blue-figure .title {
+    margin: 15px 0 0 0;
+    font-size: 14px;
+}
+#blue-figure .name {
+    margin: 5px 0 0 0;
+    font-size: 24px;
+}
+#white-figure {
+    opacity: 0;
+    position: absolute;
+    left: 50px;
+    top: 310px;
+    width: 98px;
+    height: 66px;
+    background: url("../img/white-figure-with-arrow.png") no-repeat;
+    padding: 10px 0 0 20px;
+    text-transform: uppercase;
+    font-size: 9px;
+    line-height: 12px;
+    font-family: "Sophia Pro Bold";
+    z-index: 1;
+}
+#rexona-bottle {
+    opacity: 0;
+    position: absolute;
+    left: 10px;
+    top: 290px;
+    width: 61px;
+    height: 154px;
+    background: url("../img/rexona-bottle.png") no-repeat;
+    z-index: 3;
+}
+
+#girl-bonnie {
+    width: 184px;
+    height: 333px;
+    position: absolute;
+    top: 100px;
+    right: -185px;
+    background: url("../img/bonnie.png") no-repeat;
+}
+#girl-diana {
+    width: 211px;
+    height: 310px;
+    position: absolute;
+    top: 130px;
+    right: -185px;
+    background: url("../img/diana.png") no-repeat;
+}
+#girl-gabi {
+    width: 172px;
+    height: 309px;
+    position: absolute;
+    top: 130px;
+    right: -185px;
+    background: url("../img/gabi.png") no-repeat;
+}
+
+#bonnie-video-3rd-screen, #gabi-video-3rd-screen, #diana-video-3rd-screen, #final-video-screen {
+    width: 320px;
+    height: 180px;
+    position: absolute;
+    top: 150px;
+    left: 0;
+}
+
+#footer {
+    padding-top: 45px;
+    width: 320px;
+    height: 38px;
+    background: url("../img/footer-bg.png") no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#footer a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+#footer a#next {
+    font-size: 16px;
+}
+
+#footer a#prev img {
+    margin: 10px 10px 0 0;
+    position: absolute;
+    left: 10px;
+}
+#footer a#prev span {
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+}
+
+#footer a#next img {
+    margin: 10px 0 0 10px;
+    position: absolute;
+    right: 10px;
+}
+#footer a#next span {
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+}
+
+#header-banner-last {
+    width: 233px;
+    height: 101px;
+    background: url("../img/pink-blue-figures.png") no-repeat;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+#video-image {
+    width: 299px;
+    height: 149px;
+    background: url("../img/video.png") no-repeat;
+    position: absolute;
+    top: 130px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#girls {
+    width: 230px;
+    height: 172px;
+    background: url("../img/girls.png") no-repeat;
+    position: absolute;
+    top: 270px;
+    left: 10px;
+}
+
+#big-rexona-bottle {
+    width: 81px;
+    height: 219px;
+    background: url("../img/big-rexona-bottle.png") no-repeat;
+    position: absolute;
+    bottom: 25px;
+    right: 10px;
+}
+
+#white-figure-last-screen {
+    width: 207px;
+    height: 57px;
+    background: url("../img/white-figure-last-screen.png") no-repeat;
+    position: absolute;
+    bottom: 35px;
+    left: -20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 14px;
+    font-family: "Sophia Pro Bold";
+    padding: 17px 0 0 25px;
+}
+
+#white-figure-last-screen span {
+    transform: rotate(-3deg);
+    display: block;
+}
+
+#final-btn {
+    text-decoration: none;
+    display: block;
+    color: #ffffff;
+    width: 207px;
+    height: 36px;
+    background: url("../img/final-blue-btn.png") no-repeat;
+    position: absolute;
+    top: 145px;
+    left: 56px;
+    text-align: center;
+    padding: 20px 0;
+    text-transform: uppercase;
+    font-family: "Sophia Pro Bold";
+}
+#final-btn .text {
+    font-size: 13px;
+}
+#final-btn .big-text {
+    font-size: 24px;
+}
