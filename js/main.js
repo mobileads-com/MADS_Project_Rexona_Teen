@@ -541,6 +541,9 @@ Ad.prototype.renderSecondScreen = function (config) {
 };
 
 Ad.prototype.createVideoOn3rdScreen = function () {
+    
+    window.navigator.vibrate(200);
+    
     var wrapper = $('#wrapper');
     var rexonaBottle = $('#rexona-bottle');
 
