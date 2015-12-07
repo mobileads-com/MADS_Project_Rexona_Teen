@@ -43,7 +43,7 @@ mads.prototype.uniqId = function () {
 };
 
 /* Link Opner */
-mads.prototype.linkOpener = function (url) {
+mads.prototype.linkOpener = function (url) { console.log(url);
 
     if(typeof url != "undefined" && url !=""){
         if (typeof mraid !== 'undefined') {
@@ -55,7 +55,7 @@ mads.prototype.linkOpener = function (url) {
 };
 
 /* tracker */
-mads.prototype.tracker = function (tt, type, name) {
+mads.prototype.tracker = function (tt, type, name) { console.log(type);
     console.log(type);
     /* 
      * name is used to make sure that particular tracker is tracked for only once
@@ -146,7 +146,7 @@ var msgObj = {
         ]
     },
     secondScreen : {
-        whiteFigure : 'Drag deodorant<br/>pada karakter',
+        whiteFigure : 'Drag deodoran<br/>pada karakter',
         blueFigure : '<p class="title">kamu Adalah</p>',
         diana : {
             description : 'Modis dan ngga pernah<br/>Ketinggalan mode'
@@ -192,10 +192,10 @@ var Ad = function () {
 };
 
 Ad.prototype.trackHashChange = function () {
-    $(this.sdk.bodyTag).attr('onhashchange', 'setupRouting()');
+    $(this.sdk.bodyTag).attr('onhashchange', 'setupRouting(this)');
 };
 
-function setupRouting () {
+function setupRouting (self) {
     var bonnieVideoExists = $('iframe#bonnie-video-3rd-screen').length;
     var gabiVideoExists = $('iframe#gabi-video-3rd-screen').length;
     var dianaVideoExists = $('iframe#diana-video-3rd-screen').length;
@@ -221,6 +221,12 @@ function setupRouting () {
             } else {
                 $('#footer').remove();
             }
+            
+            /* @NOTE */
+            $('#blue-figure').css('background', 'url("img/blue-figure.png") no-repeat')
+            
+            self.sdk.tracker('E', 'bonnie');
+            
             break;
         case '#gabi':
             console.log('We are on Gabi\'s screen');
@@ -236,6 +242,12 @@ function setupRouting () {
             } else {
                 $('#footer').remove();
             }
+            
+            /* @NOTE */
+            $('#blue-figure').css('background', 'url("img/yellow-figure.png") no-repeat')
+            
+            self.sdk.tracker('E', 'gabi');
+            
             break;
         case '#diana':
             console.log('We are on Diana\'s screen');
@@ -251,6 +263,12 @@ function setupRouting () {
             } else {
                 $('#footer').remove();
             }
+            
+            /* @NOTE */
+            $('#blue-figure').css('background', 'url("img/green-figure.png") no-repeat')
+            
+            self.sdk.tracker('E', 'diana');
+            
             break;
         case '#last':
             ad.createLastScreen(firstScreen);
@@ -265,7 +283,10 @@ function setupRouting () {
 }
 
 Ad.prototype.createFinalScreen = function (parent) {
-    var finalBtn = $('<a href="http://facebook.com/" target="_blank" id="final-btn"></a>');
+    
+    var  _this = this; 
+    
+    var finalBtn = $('<a href="https://www.facebook.com/RexonaTeensIN" target="_blank" id="final-btn"></a>');
 
     $('#footer #next').hide();
     $('#first-screen #video-image').hide();
@@ -273,6 +294,16 @@ Ad.prototype.createFinalScreen = function (parent) {
 
     parent.append(finalBtn);
     finalBtn.html(msgObj.finalScreen.finalBtnText);
+    
+    $('#final-btn').on('click', function (e) {
+        e.preventDefault();
+       
+    });
+    
+    $('#rma-widget').on('click', function () {
+        _this.sdk.linkOpener('https://www.facebook.com/RexonaTeensIN');
+        _this.sdk.tracker('E', 'landingpage');
+    });
 };
 
 Ad.prototype.createLastScreen = function (parent) {
@@ -316,7 +347,7 @@ Ad.prototype.createLastScreen = function (parent) {
                 msgObj.finalVideoState = e.data;
                 if (e.data == 0) {
                     location.hash = '#final';
-                }
+                } 
             };
             if (window.onYouTubeIframeAPIReady) {
                 finalVideo.loadVideo();
@@ -421,6 +452,7 @@ Ad.prototype.renderSecondScreen = function (config) {
         firstScreen.append(girl);
         firstScreen.append(whiteFigure);
         firstScreen.append(rexonaBottle);
+        
 
         pinkFigure.html(config.secondScreen[name].description);
         pinkFigure.animate({
@@ -445,7 +477,10 @@ Ad.prototype.renderSecondScreen = function (config) {
         rexonaBottle.on('mousedown', createDragableArea);
         rexonaBottle.on('touchstart', createDragableArea);
 
-        function createDragableArea () {
+        function createDragableArea () { 
+            
+            self.sdk.tracker('E', name + '_drag');
+            
             whiteFigure.remove();
 
             wrapper.on('mousemove', moveRexonaBottle);
@@ -509,6 +544,8 @@ Ad.prototype.createVideoOn3rdScreen = function () {
     var wrapper = $('#wrapper');
     var rexonaBottle = $('#rexona-bottle');
 
+    var _this = this;
+    
     rexonaBottle.remove();
     wrapper.css({
         backgroundColor : '#000000'
@@ -529,6 +566,8 @@ Ad.prototype.createVideoOn3rdScreen = function () {
                 msgObj.bonnieVideoState = e.data;
                 if (e.data == 0) {
                     location.hash = '#last';
+                } else if (e.data == 1) {
+                    _this.sdk.tracker('E', 'bonnie_video');
                 }
             };
             if (window.onYouTubeIframeAPIReady) {
@@ -553,6 +592,8 @@ Ad.prototype.createVideoOn3rdScreen = function () {
                 msgObj.dianaVideoState = e.data;
                 if (e.data == 0) {
                     location.hash = '#last';
+                } else if (e.data == 1) {
+                    _this.sdk.tracker('E', 'diana_video');
                 }
             };
             if (window.onYouTubeIframeAPIReady) {
@@ -573,10 +614,12 @@ Ad.prototype.createVideoOn3rdScreen = function () {
                 'videoId': 'J962eDTMevU',
                 'tracker': sdk
             });
-            gabiVideo.onPlayerStateChange = function (e) {
+            gabiVideo.onPlayerStateChange = function (e) { console.log(e);
                 msgObj.gabiVideoState = e.data;
                 if (e.data == 0) {
                     location.hash = '#last';
+                } else if (e.data == 1) {
+                    _this.sdk.tracker('E', 'gabi_video');
                 }
             };
             if (window.onYouTubeIframeAPIReady) {
