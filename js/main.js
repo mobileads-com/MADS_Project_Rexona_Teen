@@ -302,26 +302,29 @@ Ad.prototype.createLastScreen = function (parent) {
 
         location.hash = location.hash + '-video';
         wrapper.show();
-        wrapper.append('<div id="final-video-screen"></div>');
-        finalVideo = new ytComponent({
-            'container' : 'final-video-screen',
-            'width' : '320',
-            'height' : '180',
-            'videoId' : 'zSSgvO90vtw',
-            'tracker' : sdk
-        });
-        finalVideo.onPlayerStateChange = function (e) {
-            msgObj.finalVideoState = e.data;
-            if (e.data == 0) {
-                location.hash = '#final';
-            }
-        };
-        if (window.onYouTubeIframeAPIReady) {
-            finalVideo.loadVideo();
-        } else {
-            window.onYouTubeIframeAPIReady = function () {
-                finalVideo.loadVideo();
+
+        if (!$('#final-video-screen').length) {
+            wrapper.append('<div id="final-video-screen"></div>');
+            finalVideo = new ytComponent({
+                'container': 'final-video-screen',
+                'width': '320',
+                'height': '180',
+                'videoId': 'zSSgvO90vtw',
+                'tracker': sdk
+            });
+            finalVideo.onPlayerStateChange = function (e) {
+                msgObj.finalVideoState = e.data;
+                if (e.data == 0) {
+                    location.hash = '#final';
+                }
             };
+            if (window.onYouTubeIframeAPIReady) {
+                finalVideo.loadVideo();
+            } else {
+                window.onYouTubeIframeAPIReady = function () {
+                    finalVideo.loadVideo();
+                };
+            }
         }
     });
 
@@ -511,70 +514,77 @@ Ad.prototype.createVideoOn3rdScreen = function () {
         backgroundColor : '#000000'
     });
 
+    //wrapper.html('');
     if (location.hash == "#bonnie") {
-        wrapper.append('<div id="bonnie-video-3rd-screen"></div>');
-        bonnieVideo = new ytComponent({
-            'container' : 'bonnie-video-3rd-screen',
-            'width' : '320',
-            'height' : '180',
-            'videoId' : '8LiAjg2_WXA',
-            'tracker' : sdk
-        });
-        bonnieVideo.onPlayerStateChange = function (e) {
-            msgObj.bonnieVideoState = e.data;
-            if (e.data == 0) {
-                location.hash = '#last';
-            }
-        };
-        if (window.onYouTubeIframeAPIReady) {
-            bonnieVideo.loadVideo();
-        } else {
-            window.onYouTubeIframeAPIReady = function () {
+        if (!$('#bonnie-video-3rd-screen').length) {
+            wrapper.append('<div id="bonnie-video-3rd-screen"></div>');
+            bonnieVideo = new ytComponent({
+                'container' : 'bonnie-video-3rd-screen',
+                'width' : '320',
+                'height' : '180',
+                'videoId' : '8LiAjg2_WXA',
+                'tracker' : sdk
+            });
+            bonnieVideo.onPlayerStateChange = function (e) {
+                msgObj.bonnieVideoState = e.data;
+                if (e.data == 0) {
+                    location.hash = '#last';
+                }
+            };
+            if (window.onYouTubeIframeAPIReady) {
                 bonnieVideo.loadVideo();
+            } else {
+                window.onYouTubeIframeAPIReady = function () {
+                    bonnieVideo.loadVideo();
+                }
             }
         }
     } else if (location.hash == "#diana") {
-        wrapper.append('<div id="diana-video-3rd-screen"></div>');
-        dianaVideo = new ytComponent({
-            'container' : 'diana-video-3rd-screen',
-            'width' : '320',
-            'height' : '180',
-            'videoId' : 'UF4lAclHALc',
-            'tracker' : sdk
-        });
-        dianaVideo.onPlayerStateChange = function (e) {
-            msgObj.dianaVideoState = e.data;
-            if (e.data == 0) {
-                location.hash = '#last';
-            }
-        };
-        if (window.onYouTubeIframeAPIReady) {
-            dianaVideo.loadVideo();
-        } else {
-            window.onYouTubeIframeAPIReady = function () {
+        if (!$('#diana-video-3rd-screen').length) {
+            wrapper.append('<div id="diana-video-3rd-screen"></div>');
+            dianaVideo = new ytComponent({
+                'container' : 'diana-video-3rd-screen',
+                'width' : '320',
+                'height' : '180',
+                'videoId' : 'UF4lAclHALc',
+                'tracker' : sdk
+            });
+            dianaVideo.onPlayerStateChange = function (e) {
+                msgObj.dianaVideoState = e.data;
+                if (e.data == 0) {
+                    location.hash = '#last';
+                }
+            };
+            if (window.onYouTubeIframeAPIReady) {
                 dianaVideo.loadVideo();
+            } else {
+                window.onYouTubeIframeAPIReady = function () {
+                    dianaVideo.loadVideo();
+                }
             }
         }
     } else {
-        wrapper.append('<div id="gabi-video-3rd-screen"></div>');
-        gabiVideo = new ytComponent({
-            'container' : 'gabi-video-3rd-screen',
-            'width' : '320',
-            'height' : '180',
-            'videoId' : 'J962eDTMevU',
-            'tracker' : sdk
-        });
-        gabiVideo.onPlayerStateChange = function (e) {
-            msgObj.gabiVideoState = e.data;
-            if (e.data == 0) {
-                location.hash = '#last';
-            }
-        };
-        if (window.onYouTubeIframeAPIReady) {
-            gabiVideo.loadVideo();
-        } else {
-            window.onYouTubeIframeAPIReady = function () {
+        if (!$('#gabi-video-3rd-screen').length) {
+            wrapper.append('<div id="gabi-video-3rd-screen"></div>');
+            gabiVideo = new ytComponent({
+                'container': 'gabi-video-3rd-screen',
+                'width': '320',
+                'height': '180',
+                'videoId': 'J962eDTMevU',
+                'tracker': sdk
+            });
+            gabiVideo.onPlayerStateChange = function (e) {
+                msgObj.gabiVideoState = e.data;
+                if (e.data == 0) {
+                    location.hash = '#last';
+                }
+            };
+            if (window.onYouTubeIframeAPIReady) {
                 gabiVideo.loadVideo();
+            } else {
+                window.onYouTubeIframeAPIReady = function () {
+                    gabiVideo.loadVideo();
+                }
             }
         }
     }

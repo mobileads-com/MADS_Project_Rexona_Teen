@@ -201,7 +201,16 @@ body {
     background: url("../img/gabi.png") no-repeat;
 }
 
-#bonnie-video-3rd-screen, #gabi-video-3rd-screen, #diana-video-3rd-screen, #final-video-screen {
+div#bonnie-video-3rd-screen, div#gabi-video-3rd-screen, div#diana-video-3rd-screen, div#final-video-screen {
+    z-index: 2;
+    width: 320px;
+    height: 180px;
+    position: absolute;
+    top: 150px;
+    left: 0;
+}
+iframe#bonnie-video-3rd-screen, iframe#gabi-video-3rd-screen, iframe#diana-video-3rd-screen, iframe#final-video-screen {
+    z-index: 10;
     width: 320px;
     height: 180px;
     position: absolute;
