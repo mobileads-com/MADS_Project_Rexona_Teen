@@ -221,12 +221,12 @@ function setupRouting (self) {
             } else {
                 $('#footer').remove();
             }
-            
+
             /* @NOTE */
             $('#blue-figure').css('background', 'url("img/blue-figure.png") no-repeat')
-            
+
             self.sdk.tracker('E', 'bonnie');
-            
+
             break;
         case '#gabi':
             console.log('We are on Gabi\'s screen');
@@ -242,12 +242,12 @@ function setupRouting (self) {
             } else {
                 $('#footer').remove();
             }
-            
+
             /* @NOTE */
             $('#blue-figure').css('background', 'url("img/yellow-figure.png") no-repeat')
-            
+
             self.sdk.tracker('E', 'gabi');
-            
+
             break;
         case '#diana':
             console.log('We are on Diana\'s screen');
@@ -263,12 +263,12 @@ function setupRouting (self) {
             } else {
                 $('#footer').remove();
             }
-            
+
             /* @NOTE */
             $('#blue-figure').css('background', 'url("img/green-figure.png") no-repeat')
-            
+
             self.sdk.tracker('E', 'diana');
-            
+
             break;
         case '#last':
             ad.createLastScreen(firstScreen);
@@ -283,9 +283,9 @@ function setupRouting (self) {
 }
 
 Ad.prototype.createFinalScreen = function (parent) {
-    
-    var  _this = this; 
-    
+
+    var  _this = this;
+
     var finalBtn = $('<a href="https://www.facebook.com/RexonaTeensIN" target="_blank" id="final-btn"></a>');
 
     $('#footer #next').hide();
@@ -294,14 +294,19 @@ Ad.prototype.createFinalScreen = function (parent) {
 
     parent.append(finalBtn);
     finalBtn.html(msgObj.finalScreen.finalBtnText);
-    
-    $('#final-btn').on('click', function (e) {
-        e.preventDefault();
-       
-    });
-    
+
+    $('#wrapper')
+        .html('')
+        .css({
+            display: 'block',
+            background: 'transparent',
+            top: '-30px'
+        })
+        .click(function () {
+            _this.sdk.linkOpener('https://www.facebook.com/RexonaTeensIN');
+        });
+
     $('#rma-widget').on('click', function () {
-        _this.sdk.linkOpener('https://www.facebook.com/RexonaTeensIN');
         _this.sdk.tracker('E', 'landingpage');
     });
 };
@@ -346,8 +351,8 @@ Ad.prototype.createLastScreen = function (parent) {
             finalVideo.onPlayerStateChange = function (e) {
                 msgObj.finalVideoState = e.data;
                 if (e.data == 0) {
-                    location.hash = '#final';
-                } 
+                    location.hash = '#last';
+                }
             };
             if (window.onYouTubeIframeAPIReady) {
                 finalVideo.loadVideo();
@@ -439,7 +444,7 @@ Ad.prototype.renderSecondScreen = function (config) {
         var girl = $('<div id="girl-' + name + '"></div>');
         var wrapper = $('<div id="wrapper"></div>');
 
-            firstScreen.css({
+        firstScreen.css({
             background : 'transparent'
         });
         $('#text-below-banner').hide();
@@ -452,7 +457,7 @@ Ad.prototype.renderSecondScreen = function (config) {
         firstScreen.append(girl);
         firstScreen.append(whiteFigure);
         firstScreen.append(rexonaBottle);
-        
+
 
         pinkFigure.html(config.secondScreen[name].description);
         pinkFigure.animate({
@@ -477,10 +482,10 @@ Ad.prototype.renderSecondScreen = function (config) {
         rexonaBottle.on('mousedown', createDragableArea);
         rexonaBottle.on('touchstart', createDragableArea);
 
-        function createDragableArea () { 
-            
+        function createDragableArea () {
+
             self.sdk.tracker('E', name + '_drag');
-            
+
             whiteFigure.remove();
 
             wrapper.on('mousemove', moveRexonaBottle);
@@ -541,20 +546,19 @@ Ad.prototype.renderSecondScreen = function (config) {
 };
 
 Ad.prototype.createVideoOn3rdScreen = function () {
-    
+
     window.navigator.vibrate(200);
-    
+
     var wrapper = $('#wrapper');
     var rexonaBottle = $('#rexona-bottle');
 
     var _this = this;
-    
+
     rexonaBottle.remove();
     wrapper.css({
         backgroundColor : '#000000'
     });
 
-    //wrapper.html('');
     if (location.hash == "#bonnie") {
         if (!$('#bonnie-video-3rd-screen').length) {
             wrapper.append('<div id="bonnie-video-3rd-screen"></div>');
@@ -562,7 +566,7 @@ Ad.prototype.createVideoOn3rdScreen = function () {
                 'container' : 'bonnie-video-3rd-screen',
                 'width' : '320',
                 'height' : '180',
-                'videoId' : '8LiAjg2_WXA',
+                'videoId' : 'zSSgvO90vtw',
                 'tracker' : sdk
             });
             bonnieVideo.onPlayerStateChange = function (e) {
@@ -588,7 +592,7 @@ Ad.prototype.createVideoOn3rdScreen = function () {
                 'container' : 'diana-video-3rd-screen',
                 'width' : '320',
                 'height' : '180',
-                'videoId' : 'UF4lAclHALc',
+                'videoId' : 'zSSgvO90vtw',
                 'tracker' : sdk
             });
             dianaVideo.onPlayerStateChange = function (e) {
@@ -614,7 +618,7 @@ Ad.prototype.createVideoOn3rdScreen = function () {
                 'container': 'gabi-video-3rd-screen',
                 'width': '320',
                 'height': '180',
-                'videoId': 'J962eDTMevU',
+                'videoId': 'zSSgvO90vtw',
                 'tracker': sdk
             });
             gabiVideo.onPlayerStateChange = function (e) { console.log(e);
@@ -669,6 +673,10 @@ Ad.prototype.preloadImages = function (parent) {
     'var pic22 = new Image();' +
     'var pic23 = new Image();' +
     'var pic24 = new Image();' +
+    'var pic25 = new Image();' +
+    'var pic26 = new Image();' +
+    'var pic27 = new Image();' +
+    'var pic28 = new Image();' +
     'pic1.src="img/bg.png";' +
     'pic2.src="img/big-rexona-bottle.png";' +
     'pic3.src="img/blue-btn-bg-rounded.png";' +
@@ -692,7 +700,11 @@ Ad.prototype.preloadImages = function (parent) {
     'pic21.src="img/right-arrow.png";' +
     'pic22.src="img/video.png";' +
     'pic23.src="img/white-figure-last-screen.png";' +
-    'pic24.src="img/white-figure-with-arrow.png";';
+    'pic24.src="img/green-btn-bg-rounded.png";' +
+    'pic25.src="img/yellow-btn-bg-rounded.png";' +
+    'pic26.src="img/green-figure.png";' +
+    'pic27.src="img/yellow-figure.png";' +
+    'pic28.src="img/white-figure-with-arrow.png";';
 
     script.innerHTML = str;
 

@@ -113,6 +113,12 @@ body {
     line-height: 16px;
     cursor: pointer;
 }
+#first-screen #buttons .btn:first-child {
+    background: url("../img/green-btn-bg-rounded.png") no-repeat;
+}
+#first-screen #buttons .btn:last-child {
+    background: url("../img/yellow-btn-bg-rounded.png") no-repeat;
+}
 
 #pink-figure {
     position: absolute;
