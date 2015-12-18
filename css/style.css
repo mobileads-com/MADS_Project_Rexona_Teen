@@ -285,6 +285,14 @@ iframe#bonnie-video-3rd-screen, iframe#gabi-video-3rd-screen, iframe#diana-video
     cursor: pointer;
 }
 
+#lp_click_area {
+    width: 320px;
+    height: 440px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 99;
+}
+
 #girls {
     width: 230px;
     height: 172px;

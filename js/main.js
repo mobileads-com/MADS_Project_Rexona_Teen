@@ -312,8 +312,11 @@ Ad.prototype.createFinalScreen = function (parent) {
 };
 
 Ad.prototype.createLastScreen = function (parent) {
+    var  _this = this;
+
     var lastHeaderBanner = $('<div id="header-banner-last"></div>');
     var videoImage = $('<div id="video-image"></div>');
+    var clickable = $('<div id="lp_click_area"></div>');
     var girls = $('<div id="girls"></div>');
     var bigRexonaBottle = $('<div id="big-rexona-bottle"></div>');
     var whiteFigureLastScreen = $('<div id="white-figure-last-screen"></div>');
@@ -328,40 +331,46 @@ Ad.prototype.createLastScreen = function (parent) {
 
     parent.append(lastHeaderBanner);
     parent.append(videoImage);
+    parent.append(clickable);
     parent.append(girls);
     parent.append(bigRexonaBottle);
     parent.append(whiteFigureLastScreen);
     whiteFigureLastScreen.html('<span>' + msgObj.lastScreen.whiteBannerText + '</span>');
 
-    videoImage.on('click', function () {
-        var wrapper = $('#wrapper');
+    //videoImage.on('click', function () {
+    //    var wrapper = $('#wrapper');
+    //
+    //    location.hash = location.hash + '-video';
+    //    wrapper.show();
+    //
+    //    if (!$('#final-video-screen').length) {
+    //        wrapper.append('<div id="final-video-screen"></div>');
+    //        finalVideo = new ytComponent({
+    //            'container': 'final-video-screen',
+    //            'width': '320',
+    //            'height': '180',
+    //            'videoId': 'zSSgvO90vtw',
+    //            'tracker': sdk
+    //        });
+    //        finalVideo.onPlayerStateChange = function (e) {
+    //            msgObj.finalVideoState = e.data;
+    //            if (e.data == 0) {
+    //                location.hash = '#last';
+    //            }
+    //        };
+    //        if (window.onYouTubeIframeAPIReady) {
+    //            finalVideo.loadVideo();
+    //        } else {
+    //            window.onYouTubeIframeAPIReady = function () {
+    //                finalVideo.loadVideo();
+    //            };
+    //        }
+    //    }
+    //});
 
-        location.hash = location.hash + '-video';
-        wrapper.show();
-
-        if (!$('#final-video-screen').length) {
-            wrapper.append('<div id="final-video-screen"></div>');
-            finalVideo = new ytComponent({
-                'container': 'final-video-screen',
-                'width': '320',
-                'height': '180',
-                'videoId': 'zSSgvO90vtw',
-                'tracker': sdk
-            });
-            finalVideo.onPlayerStateChange = function (e) {
-                msgObj.finalVideoState = e.data;
-                if (e.data == 0) {
-                    location.hash = '#last';
-                }
-            };
-            if (window.onYouTubeIframeAPIReady) {
-                finalVideo.loadVideo();
-            } else {
-                window.onYouTubeIframeAPIReady = function () {
-                    finalVideo.loadVideo();
-                };
-            }
-        }
+    clickable.on('click', function (e) {
+        _this.sdk.linkOpener('https://www.youtube.com/watch?v=zSSgvO90vtw');
+        _this.sdk.tracker('E', 'landingpage');
     });
 
     this.addFooterNavigationLast(parent);
@@ -383,10 +392,10 @@ Ad.prototype.addFooterNavigation = function (parent) {
 Ad.prototype.addFooterNavigationLast = function (parent) {
     var footer = $('<div id="footer"></div>');
     var back = $('<a href="#" id="prev"><img src="' + this.sdk.path + 'img/left-arrow.png" /><span>' + msgObj.secondScreen.prevLinkText + '</span></a>');
-    var next = $('<a href="#final" id="next"><span>' + msgObj.secondScreen.nextLinkText + '</span><img src="' + this.sdk.path + 'img/right-arrow.png" /></a>');
+    //var next = $('<a href="#final" id="next"><span>' + msgObj.secondScreen.nextLinkText + '</span><img src="' + this.sdk.path + 'img/right-arrow.png" /></a>');
 
     footer.append(back);
-    footer.append(next);
+    //footer.append(next);
     parent.append(footer);
 };
 
