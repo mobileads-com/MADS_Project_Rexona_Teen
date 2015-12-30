@@ -155,6 +155,7 @@ body {
 #blue-figure .name {
     margin: 5px 0 0 0;
     font-size: 24px;
+    line-height: 0.5;
 }
 #white-figure {
     opacity: 0;

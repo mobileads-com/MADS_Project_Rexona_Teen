@@ -55,8 +55,7 @@ mads.prototype.linkOpener = function (url) { console.log(url);
 };
 
 /* tracker */
-mads.prototype.tracker = function (tt, type, name) { console.log(type);
-    console.log(type);
+mads.prototype.tracker = function (tt, type, name) {
     /* 
      * name is used to make sure that particular tracker is tracked for only once
      * there might have the same type in different location, so it will need the name to differentiate them
@@ -65,6 +64,10 @@ mads.prototype.tracker = function (tt, type, name) { console.log(type);
 
     if ( typeof this.custTracker != 'undefined' && this.custTracker != '' && this.tracked.indexOf(name) == -1 ) {
         for (var i = 0; i < this.custTracker.length; i++) {
+            if (type == 'diana' || type == 'gabi' || type == 'bonnie') {
+                if (i == 1) return false;
+            }
+
             var img = document.createElement('img');
 
             /* Insert Macro */
@@ -101,39 +104,6 @@ mads.prototype.loadCss = function (href) {
     link.setAttribute('rel', 'stylesheet');
 
     this.headTag.appendChild(link);
-};
-
-/*
- *
- * Unit Testing for mads
- *
- */
-var testunit = function () {
-    var app = new mads();
-
-    console.log(typeof app.bodyTag != 'undefined');
-    console.log(typeof app.headTag != 'undefined');
-    console.log(typeof app.custTracker != 'undefined');
-    console.log(typeof app.path != 'undefined');
-    console.log(typeof app.contentTag != 'undefined');
-
-    app.loadJs('https://code.jquery.com/jquery-1.11.3.min.js',function () {
-        console.log(typeof window.jQuery != 'undefined');
-    });
-
-    app.loadCss('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css');
-
-    app.contentTag.innerHTML =
-        '<div class="container"><div class="jumbotron"> \
-            <h1>Hello, world!</h1> \
-            <p>...</p> \
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> \
-        </div></div>';
-
-    app.custTracker = ['http://www.tracker.com?type={{type}}&tt={{tt}}','http://www.tracker2.com?type={{type}}'];
-
-    app.tracker('CTR', 'test');
-    app.tracker('E','test','name');
 };
 
 var msgObj = {
@@ -307,7 +277,7 @@ Ad.prototype.createFinalScreen = function (parent) {
         });
 
     $('#rma-widget').on('click', function () {
-        _this.sdk.tracker('E', 'landingpage');
+        _this.sdk.tracker('CTR', 'landingpage');
     });
 };
 
@@ -370,7 +340,7 @@ Ad.prototype.createLastScreen = function (parent) {
 
     clickable.on('click', function (e) {
         _this.sdk.linkOpener('https://www.youtube.com/watch?v=zSSgvO90vtw');
-        _this.sdk.tracker('E', 'landingpage');
+        _this.sdk.tracker('CTR', 'landingpage');
     });
 
     this.addFooterNavigationLast(parent);
@@ -556,7 +526,8 @@ Ad.prototype.renderSecondScreen = function (config) {
 
 Ad.prototype.createVideoOn3rdScreen = function () {
 
-    window.navigator.vibrate(200);
+    if (typeof window.navigator.vibrate !== 'undefined')
+        window.navigator.vibrate(200);
 
     var wrapper = $('#wrapper');
     var rexonaBottle = $('#rexona-bottle');
