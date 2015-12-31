@@ -288,7 +288,7 @@ iframe#bonnie-video-3rd-screen, iframe#gabi-video-3rd-screen, iframe#diana-video
 
 #lp_click_area {
     width: 320px;
-    height: 440px;
+    height: 420px;
     position: absolute;
     cursor: pointer;
     z-index: 99;

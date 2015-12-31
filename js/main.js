@@ -64,9 +64,17 @@ mads.prototype.tracker = function (tt, type, name) {
 
     if ( typeof this.custTracker != 'undefined' && this.custTracker != '' && this.tracked.indexOf(name) == -1 ) {
         for (var i = 0; i < this.custTracker.length; i++) {
+            // INT - Uncomment this block for Interstitial
             if (type == 'diana' || type == 'gabi' || type == 'bonnie') {
-                if (i == 1) return false;
+                if (i === 1) continue;
+            } else {
+                if (i === 2) continue;
             }
+            // END INT
+
+            // EXP - Uncomment this block for expandable
+            //if (i === 2) continue;
+            // END EXP
 
             var img = document.createElement('img');
 
@@ -307,37 +315,6 @@ Ad.prototype.createLastScreen = function (parent) {
     parent.append(whiteFigureLastScreen);
     whiteFigureLastScreen.html('<span>' + msgObj.lastScreen.whiteBannerText + '</span>');
 
-    //videoImage.on('click', function () {
-    //    var wrapper = $('#wrapper');
-    //
-    //    location.hash = location.hash + '-video';
-    //    wrapper.show();
-    //
-    //    if (!$('#final-video-screen').length) {
-    //        wrapper.append('<div id="final-video-screen"></div>');
-    //        finalVideo = new ytComponent({
-    //            'container': 'final-video-screen',
-    //            'width': '320',
-    //            'height': '180',
-    //            'videoId': 'zSSgvO90vtw',
-    //            'tracker': sdk
-    //        });
-    //        finalVideo.onPlayerStateChange = function (e) {
-    //            msgObj.finalVideoState = e.data;
-    //            if (e.data == 0) {
-    //                location.hash = '#last';
-    //            }
-    //        };
-    //        if (window.onYouTubeIframeAPIReady) {
-    //            finalVideo.loadVideo();
-    //        } else {
-    //            window.onYouTubeIframeAPIReady = function () {
-    //                finalVideo.loadVideo();
-    //            };
-    //        }
-    //    }
-    //});
-
     clickable.on('click', function (e) {
         _this.sdk.linkOpener('https://www.youtube.com/watch?v=zSSgvO90vtw');
         _this.sdk.tracker('CTR', 'landingpage');
@@ -363,7 +340,16 @@ Ad.prototype.addFooterNavigationLast = function (parent) {
     var footer = $('<div id="footer"></div>');
     var back = $('<a href="#" id="prev"><img src="' + this.sdk.path + 'img/left-arrow.png" /><span>' + msgObj.secondScreen.prevLinkText + '</span></a>');
     //var next = $('<a href="#final" id="next"><span>' + msgObj.secondScreen.nextLinkText + '</span><img src="' + this.sdk.path + 'img/right-arrow.png" /></a>');
-
+    $(footer).on('click', function (e) {
+        var isWebkit = 'WebkitAppearance' in document.documentElement.style
+        if ( !isWebkit ) {
+            window.location.hash = '#';
+        } else {
+            window.location.href = '#';
+            window.location.href = '#';
+        }
+        e.preventDefault();
+    });
     footer.append(back);
     //footer.append(next);
     parent.append(footer);
