@@ -1,46 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79617fee-09dc-4200-9ce2-f17c78234d6d" name="Default" comment="(Revision done) [Jeff]">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/css/fonts/Mostardesign - Sofia Pro Bold_0.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/css/fonts/Mostardesign - Sofia Pro Regular_0.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/big-rexona-bottle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/blue-btn-bg-rounded.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/blue-figure.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/bonnie.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/diana.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/final-blue-btn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/first-screen-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/footer-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/gabi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/girl-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/girl-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/girl-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/girls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/green-btn-bg-rounded.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/green-figure.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/left-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/pink-blue-figures.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/pink-figure.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/pink-header-banner (1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/pink-header-banner.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/rexona-bottle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/rexona-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/right-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/white-figure-last-screen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/white-figure-with-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/yellow-btn-bg-rounded.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/img/yellow-figure.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/interstitial/js/ninjoe.ytComponent.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/CustomAd.iml" afterPath="" />
+    <list default="true" id="79617fee-09dc-4200-9ce2-f17c78234d6d" name="Default" comment="(separate int and exp) [Jeff]">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
@@ -50,42 +12,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/adtags_generation_exp.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/ma.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/mw.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/fonts/Mostardesign - Sofia Pro Bold_0.otf" afterPath="$PROJECT_DIR$/expandable/css/fonts/Mostardesign - Sofia Pro Bold_0.otf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/fonts/Mostardesign - Sofia Pro Regular_0.otf" afterPath="$PROJECT_DIR$/expandable/css/fonts/Mostardesign - Sofia Pro Regular_0.otf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/expandable/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bg.png" afterPath="$PROJECT_DIR$/expandable/img/bg.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/big-rexona-bottle.png" afterPath="$PROJECT_DIR$/expandable/img/big-rexona-bottle.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/blue-btn-bg-rounded.png" afterPath="$PROJECT_DIR$/expandable/img/blue-btn-bg-rounded.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/blue-figure.png" afterPath="$PROJECT_DIR$/expandable/img/blue-figure.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bonnie.png" afterPath="$PROJECT_DIR$/expandable/img/bonnie.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/diana.png" afterPath="$PROJECT_DIR$/expandable/img/diana.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/final-blue-btn.png" afterPath="$PROJECT_DIR$/expandable/img/final-blue-btn.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/first-screen-bg.png" afterPath="$PROJECT_DIR$/expandable/img/first-screen-bg.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/footer-bg.png" afterPath="$PROJECT_DIR$/expandable/img/footer-bg.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/gabi.png" afterPath="$PROJECT_DIR$/expandable/img/gabi.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/girl-1.png" afterPath="$PROJECT_DIR$/expandable/img/girl-1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/girl-2.png" afterPath="$PROJECT_DIR$/expandable/img/girl-2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/girl-3.png" afterPath="$PROJECT_DIR$/expandable/img/girl-3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/girls.png" afterPath="$PROJECT_DIR$/expandable/img/girls.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/green-btn-bg-rounded.png" afterPath="$PROJECT_DIR$/expandable/img/green-btn-bg-rounded.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/green-figure.png" afterPath="$PROJECT_DIR$/expandable/img/green-figure.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/left-arrow.png" afterPath="$PROJECT_DIR$/expandable/img/left-arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/pink-blue-figures.png" afterPath="$PROJECT_DIR$/expandable/img/pink-blue-figures.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/pink-figure.png" afterPath="$PROJECT_DIR$/expandable/img/pink-figure.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/pink-header-banner (1).png" afterPath="$PROJECT_DIR$/expandable/img/pink-header-banner (1).png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/pink-header-banner.png" afterPath="$PROJECT_DIR$/expandable/img/pink-header-banner.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/rexona-bottle.png" afterPath="$PROJECT_DIR$/expandable/img/rexona-bottle.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/rexona-logo.png" afterPath="$PROJECT_DIR$/expandable/img/rexona-logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/right-arrow.png" afterPath="$PROJECT_DIR$/expandable/img/right-arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/video.png" afterPath="$PROJECT_DIR$/expandable/img/video.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/white-figure-last-screen.png" afterPath="$PROJECT_DIR$/expandable/img/white-figure-last-screen.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/white-figure-with-arrow.png" afterPath="$PROJECT_DIR$/expandable/img/white-figure-with-arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/yellow-btn-bg-rounded.png" afterPath="$PROJECT_DIR$/expandable/img/yellow-btn-bg-rounded.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/yellow-figure.png" afterPath="$PROJECT_DIR$/expandable/img/yellow-figure.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/expandable/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.js" afterPath="$PROJECT_DIR$/expandable/js/jquery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/expandable/js/main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/ninjoe.ytComponent.js" afterPath="$PROJECT_DIR$/expandable/js/ninjoe.ytComponent.js" />
     </list>
     <ignored path="Dove.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -121,8 +47,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3063063">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.14437367">
+              <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -432,7 +358,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451597636245</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="(separate int and exp) [Jeff]">
+      <created>1451968795985</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1451968795985</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -461,6 +393,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20975919" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -469,7 +402,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -479,6 +411,9 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.gitignore" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -495,7 +430,8 @@
     <MESSAGE value="(Revision done) [Jeff]" />
     <MESSAGE value="(Ready for adtags) [Jeff]" />
     <MESSAGE value="(new) [Jeff]" />
-    <option name="LAST_COMMIT_MESSAGE" value="(new) [Jeff]" />
+    <MESSAGE value="(separate int and exp) [Jeff]" />
+    <option name="LAST_COMMIT_MESSAGE" value="(separate int and exp) [Jeff]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -866,8 +802,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3063063">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.14437367">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
           <folding />
         </state>
       </provider>
