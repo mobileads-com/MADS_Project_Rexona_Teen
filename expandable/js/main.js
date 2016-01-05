@@ -16,6 +16,9 @@ var mads = function () {
     } else {
         this.custTracker = [];
     }
+    
+    /* first engagement */
+    this.firstEngagementTracked = false;
 
     /* Unique ID on each initialise */
     this.id = this.uniqId();
@@ -74,6 +77,13 @@ mads.prototype.tracker = function (tt, type, name) {
             /* Insert Macro */
             var src = this.custTracker[i].replace('{{type}}', type);
             src = src.replace('{{tt}}', tt);
+            
+            /* Append ty for first tracker only */
+            if (!this.firstEngagementTracked) {
+                src = src + '&ty=E';
+                this.firstEngagementTracked = true;
+            }
+            
             /* */
             img.src = src + '&' + this.id;
 
