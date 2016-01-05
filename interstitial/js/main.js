@@ -56,7 +56,7 @@ mads.prototype.linkOpener = function (url) { console.log(url);
 
 /* tracker */
 mads.prototype.tracker = function (tt, type, name) {
-    /* 
+    /*
      * name is used to make sure that particular tracker is tracked for only once
      * there might have the same type in different location, so it will need the name to differentiate them
      */
@@ -64,17 +64,9 @@ mads.prototype.tracker = function (tt, type, name) {
 
     if ( typeof this.custTracker != 'undefined' && this.custTracker != '' && this.tracked.indexOf(name) == -1 ) {
         for (var i = 0; i < this.custTracker.length; i++) {
-            // INT - Uncomment this block for Interstitial
-            if (type == 'diana' || type == 'gabi' || type == 'bonnie') {
-                if (i === 1) continue;
-            } else {
+            if (!(type == 'diana' || type == 'gabi' || type == 'bonnie')) {
                 if (i === 2) continue;
             }
-            // END INT
-
-            // EXP - Uncomment this block for expandable
-            //if (i === 2) continue;
-            // END EXP
 
             var img = document.createElement('img');
 
@@ -163,7 +155,7 @@ var Ad = function () {
     this.sdk.loadJs( this.sdk.path + 'js/ninjoe.ytComponent.js');
     this.sdk.loadJs( this.sdk.path + 'js/jquery.js', function () {
         self.renderFirstScreen();
-        self.trackHashChange();
+        //self.trackHashChange();
     });
 
     this.preloadImages(this.sdk.bodyTag);
@@ -353,6 +345,9 @@ Ad.prototype.addFooterNavigationLast = function (parent) {
     footer.append(back);
     //footer.append(next);
     parent.append(footer);
+    document.getElementById('prev').addEventListener('click', function () {
+        location.reload();
+    })
 };
 
 Ad.prototype.renderFirstScreen = function () {
@@ -364,17 +359,14 @@ Ad.prototype.renderFirstScreen = function () {
 
     var btn;
     for (var j = 1; j <= 3; j++) {
-        btn = $('<a class="btn" id="btn-' + j + '"></a>');
+        btn = $('<div class="btn" id="btn-' + j + '"></div>');
         btn.html(msgObj.firstScreen.buttonText[j - 1]);
         if (j === 1) {
             btn.attr('data-name', 'diana');
-            btn.attr('href', '#diana');
         } else if (j === 2) {
             btn.attr('data-name', 'bonnie');
-            btn.attr('href', '#bonnie');
         } else {
             btn.attr('data-name', 'gabi');
-            btn.attr('href', '#gabi');
         }
         buttonsDiv.append(btn);
     }
@@ -415,6 +407,9 @@ Ad.prototype.renderSecondScreen = function (config) {
         $('#text-below-banner').hide();
         $('#first-screen .girl').hide();
         $('#buttons .btn').hide();
+
+        self.sdk.tracker('E', name);
+        self.selectedCharacter = name;
 
         firstScreen.append(wrapper);
         firstScreen.append(pinkFigure);
@@ -512,6 +507,8 @@ Ad.prototype.renderSecondScreen = function (config) {
 
 Ad.prototype.createVideoOn3rdScreen = function () {
 
+    var firstScreen = $('#first-screen');
+
     if (typeof window.navigator.vibrate !== 'undefined')
         window.navigator.vibrate(200);
 
@@ -525,7 +522,7 @@ Ad.prototype.createVideoOn3rdScreen = function () {
         backgroundColor : '#000000'
     });
 
-    if (location.hash == "#bonnie") {
+    if (this.selectedCharacter == "bonnie") {
         if (!$('#bonnie-video-3rd-screen').length) {
             wrapper.append('<div id="bonnie-video-3rd-screen"></div>');
             bonnieVideo = new ytComponent({
@@ -538,7 +535,7 @@ Ad.prototype.createVideoOn3rdScreen = function () {
             bonnieVideo.onPlayerStateChange = function (e) {
                 msgObj.bonnieVideoState = e.data;
                 if (e.data == 0) {
-                    location.hash = '#last';
+                    ad.createLastScreen(firstScreen);
                 } else if (e.data == 1) {
                     _this.sdk.tracker('E', 'bonnie_video');
                 }
@@ -551,7 +548,7 @@ Ad.prototype.createVideoOn3rdScreen = function () {
                 }
             }
         }
-    } else if (location.hash == "#diana") {
+    } else if (this.selectedCharacter == "diana") {
         if (!$('#diana-video-3rd-screen').length) {
             wrapper.append('<div id="diana-video-3rd-screen"></div>');
             dianaVideo = new ytComponent({
@@ -564,7 +561,7 @@ Ad.prototype.createVideoOn3rdScreen = function () {
             dianaVideo.onPlayerStateChange = function (e) {
                 msgObj.dianaVideoState = e.data;
                 if (e.data == 0) {
-                    location.hash = '#last';
+                    ad.createLastScreen(firstScreen);
                 } else if (e.data == 1) {
                     _this.sdk.tracker('E', 'diana_video');
                 }
@@ -590,7 +587,7 @@ Ad.prototype.createVideoOn3rdScreen = function () {
             gabiVideo.onPlayerStateChange = function (e) { console.log(e);
                 msgObj.gabiVideoState = e.data;
                 if (e.data == 0) {
-                    location.hash = '#last';
+                    ad.createLastScreen(firstScreen);
                 } else if (e.data == 1) {
                     _this.sdk.tracker('E', 'gabi_video');
                 }
