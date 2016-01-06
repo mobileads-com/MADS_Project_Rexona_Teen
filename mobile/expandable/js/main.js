@@ -74,6 +74,9 @@ mads.prototype.tracker = function (tt, type, name) {
 
             var img = document.createElement('img');
 
+            /* Fix for {2} tracker */
+            this.custTracker[i] = this.custTracker[i].replace('{2}', '{{type}}')
+            
             /* Insert Macro */
             var src = this.custTracker[i].replace('{{type}}', type);
             src = src.replace('{{tt}}', tt);
