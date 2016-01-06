@@ -345,22 +345,16 @@ Ad.prototype.addFooterNavigationLast = function (parent) {
     var footer = $('<div id="footer"></div>');
     var back = $('<a href="#" id="prev"><img src="' + this.sdk.path + 'img/left-arrow.png" /><span>' + msgObj.secondScreen.prevLinkText + '</span></a>');
     //var next = $('<a href="#final" id="next"><span>' + msgObj.secondScreen.nextLinkText + '</span><img src="' + this.sdk.path + 'img/right-arrow.png" /></a>');
-    $(footer).on('click', function (e) {
-        var isWebkit = 'WebkitAppearance' in document.documentElement.style
-        if ( !isWebkit ) {
-            window.location.hash = '#';
-        } else {
-            window.location.href = '#';
-            window.location.href = '#';
-        }
-        e.preventDefault();
-    });
     footer.append(back);
     //footer.append(next);
     parent.append(footer);
-    document.getElementById('prev').addEventListener('click', function () {
-        location.reload();
-    })
+
+    var sdkContentTag = this.sdk.contentTag;
+    $(footer).on('click', function (e) {
+        $(sdkContentTag).html('');
+        ad.renderFirstScreen();
+        e.preventDefault();
+    });
 };
 
 Ad.prototype.renderFirstScreen = function () {
