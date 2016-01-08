@@ -255,11 +255,12 @@ iframe#bonnie-video-3rd-screen, iframe#gabi-video-3rd-screen, iframe#diana-video
 #footer {
     padding-top: 45px;
     width: 480px;
-    height: 38px;
+    height: 70px;
     background: url("../img/footer-bg.png") no-repeat;
     position: absolute;
     bottom: 0;
     left: 0;
+    background-position-y: 35px;
 }
 
 #footer a {
@@ -318,7 +319,7 @@ iframe#bonnie-video-3rd-screen, iframe#gabi-video-3rd-screen, iframe#diana-video
 
 #lp_click_area {
     width: 480px;
-    height: 275px;
+    height: 250px;
     position: absolute;
     cursor: pointer;
     z-index: 99;
