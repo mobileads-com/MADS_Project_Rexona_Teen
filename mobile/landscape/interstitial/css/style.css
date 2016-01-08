@@ -112,12 +112,12 @@ body {
 /*}*/
 
 #girls.first-screen {
-     width: 262px;
-     height: 210px;
-     background: url("../img/girls.png") no-repeat;
-     position: absolute;
-     top: 100px;
-     left: 2px;
+    width: 262px;
+    height: 210px;
+    background: url("../img/girls.png") no-repeat;
+    position: absolute;
+    top: 100px;
+    left: 2px;
 }
 
 #first-screen #buttons {
@@ -276,11 +276,12 @@ iframe#bonnie-video-3rd-screen, iframe#gabi-video-3rd-screen, iframe#diana-video
     margin: 10px 10px 0 0;
     position: absolute;
     left: 10px;
+    bottom: 30px;
 }
 #footer a#prev span {
     position: absolute;
     left: 30px;
-    bottom: 10px;
+    bottom: 32px;
 }
 
 #footer a#next img {

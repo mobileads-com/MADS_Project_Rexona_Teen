@@ -276,11 +276,12 @@ iframe#bonnie-video-3rd-screen, iframe#gabi-video-3rd-screen, iframe#diana-video
     margin: 10px 10px 0 0;
     position: absolute;
     left: 10px;
+    bottom: 30px;
 }
 #footer a#prev span {
     position: absolute;
     left: 30px;
-    bottom: 10px;
+    bottom: 32px;
 }
 
 #footer a#next img {
